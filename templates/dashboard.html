@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="mb-4">Dashboard</h3>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card shadow-sm text-center p-3">
+      <h5>Total Tasks</h5>
+      <h2>{{ total }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card shadow-sm text-center p-3">
+      <h5>Completed</h5>
+      <h2 class="text-success">{{ completed }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card shadow-sm text-center p-3">
+      <h5>Pending</h5>
+      <h2 class="text-danger">{{ pending }}</h2>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>All Tasks</h3>
+
+<table class="table table-hover shadow-sm">
+  <thead class="table-dark">
+    <tr>
+      <th>Title</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+    <tr>
+      <td>{{ task.title }}</td>
+      <td>{{ task.priority }}</td>
+      <td>
+        <span class="badge bg-{{ 'success' if task.status=='Completed' else 'warning' }}">
+          {{ task.status }}
+        </span>
+      </td>
+      <td>
+        <a href="/edit/{{ task._id }}" class="btn btn-sm btn-info">Edit</a>
+        <a href="/delete/{{ task._id }}" class="btn btn-sm btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

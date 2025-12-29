@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Edit Task</h3>
+
+<form method="post" class="card p-4 shadow-sm">
+  <input class="form-control mb-3" name="title" value="{{ task.title }}">
+  <textarea class="form-control mb-3" name="description">{{ task.description }}</textarea>
+
+  <select class="form-control mb-3" name="priority">
+    <option selected>{{ task.priority }}</option>
+    <option>High</option>
+    <option>Medium</option>
+    <option>Low</option>
+  </select>
+
+  <select class="form-control mb-3" name="status">
+    <option>{{ task.status }}</option>
+    <option>Completed</option>
+    <option>Pending</option>
+  </select>
+
+  <button class="btn btn-success">Update Task</button>
+</form>
+
+{% endblock %}

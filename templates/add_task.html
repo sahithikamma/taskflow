@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Add New Task</h3>
+
+<form method="post" class="card p-4 shadow-sm">
+  <input class="form-control mb-3" name="title" placeholder="Task Title" required>
+  <textarea class="form-control mb-3" name="description" placeholder="Description"></textarea>
+
+  <select class="form-control mb-3" name="priority">
+    <option>High</option>
+    <option>Medium</option>
+    <option>Low</option>
+  </select>
+
+  <button class="btn btn-primary">Add Task</button>
+</form>
+
+{% endblock %}
